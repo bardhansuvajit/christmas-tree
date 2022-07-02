@@ -1,0 +1,24 @@
+destination_faq (dest_id, question, answer)
+
+package (dest_id, img, duration, short_desc, long_desc, min_pax, max_pax, cost_per_person, offer_cost_per_person)
+
+package_day (pkg_id, position, title, desc, from, to)
+
+package_attraction (pkg_id, title, short_desc, long_desc, image)
+
+package_attraction_image (attr_id, img_50, ...)
+
+package_inc_exc (pkg_id, type-inclusion/ exclusion, title, desc, img, icon)
+
+package_gallery (pkg_id, title, desc, img)
+
+package_review (pkg_id, name, email, mobile, rating, review, video)
+
+
+
+
+
+
+content (page, content)
+
+leads (name, email, whatsapp, mobile, )
