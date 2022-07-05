@@ -16,7 +16,7 @@ class BannerRepository implements BannerInterface {
     }
     public function listAll() 
     {
-        return Banner::orderBy('position')->get();
+        return Banner::orderBy('position')->paginate(5);
     }
     public function getBannerById($id) 
     {
@@ -35,25 +35,25 @@ class BannerRepository implements BannerInterface {
         $banners->desc = $collection['desc'];
         
         // image 50
-            $img_50 = $collection['img_50'];
-            $imageName = time().".".mt_rand().".".$img_50->getClientOriginalName();
-            $img_50->move($upload_path, $imageName);
-            $uploadedImage = $imageName;
-            $banners->img_50 = $upload_path.$uploadedImage;
+            // $img_50 = $collection['img_50'];
+            // $imageName = time().".".mt_rand().".".$img_50->getClientOriginalName();
+            // $img_50->move($upload_path, $imageName);
+            // $uploadedImage = $imageName;
+            // $banners->img_50 = $upload_path.$uploadedImage;
         
         // image 200
-            $img_200 = $collection['img_200'];
-            $imageName = time().".".mt_rand().".".$img_200->getClientOriginalName();
-            $img_200->move($upload_path, $imageName);
-            $uploadedImage = $imageName;
-            $banners->img_200 = $upload_path.$uploadedImage;
+            // $img_200 = $collection['img_200'];
+            // $imageName = time().".".mt_rand().".".$img_200->getClientOriginalName();
+            // $img_200->move($upload_path, $imageName);
+            // $uploadedImage = $imageName;
+            // $banners->img_200 = $upload_path.$uploadedImage;
         
         // image 500
-            $img_500 = $collection['img_500'];
-            $imageName = time().".".mt_rand().".".$img_500->getClientOriginalName();
-            $img_500->move($upload_path, $imageName);
-            $uploadedImage = $imageName;
-            $banners->img_500 = $upload_path.$uploadedImage;
+            // $img_500 = $collection['img_500'];
+            // $imageName = time().".".mt_rand().".".$img_500->getClientOriginalName();
+            // $img_500->move($upload_path, $imageName);
+            // $uploadedImage = $imageName;
+            // $banners->img_500 = $upload_path.$uploadedImage;
 
         // image 1000
         $img_1000 = $collection['img_1000'];
@@ -79,36 +79,36 @@ class BannerRepository implements BannerInterface {
         $banners->secondary_btn_link = $collection['secondary_btn_link'];
         $banners->desc = $collection['desc'];
 
-        if (isset($newDetails['img_50'])) {
-            // delete old image
-            if (Storage::exists($banners->img_50)) unlink($banners->img_50);
+        // if (isset($newDetails['img_50'])) {
+        //     // delete old image
+        //     if (Storage::exists($banners->img_50)) unlink($banners->img_50);
 
-            $image = $newDetails['img_50'];
-            $imageName = time().".".$image->getClientOriginalName();
-            $image->move($upload_path, $imageName);
-            $uploadedImage = $imageName;
-            $banners->img_50 = $upload_path.$uploadedImage;
-        }
-        if (isset($newDetails['img_200'])) {
-            // delete old image
-            if (Storage::exists($banners->img_200)) unlink($banners->img_200);
+        //     $image = $newDetails['img_50'];
+        //     $imageName = time().".".$image->getClientOriginalName();
+        //     $image->move($upload_path, $imageName);
+        //     $uploadedImage = $imageName;
+        //     $banners->img_50 = $upload_path.$uploadedImage;
+        // }
+        // if (isset($newDetails['img_200'])) {
+        //     // delete old image
+        //     if (Storage::exists($banners->img_200)) unlink($banners->img_200);
 
-            $image = $newDetails['img_200'];
-            $imageName = time().".".$image->getClientOriginalName();
-            $image->move($upload_path, $imageName);
-            $uploadedImage = $imageName;
-            $banners->img_200 = $upload_path.$uploadedImage;
-        }
-        if (isset($newDetails['img_500'])) {
-            // delete old image
-            if (Storage::exists($banners->img_500)) unlink($banners->img_500);
+        //     $image = $newDetails['img_200'];
+        //     $imageName = time().".".$image->getClientOriginalName();
+        //     $image->move($upload_path, $imageName);
+        //     $uploadedImage = $imageName;
+        //     $banners->img_200 = $upload_path.$uploadedImage;
+        // }
+        // if (isset($newDetails['img_500'])) {
+        //     // delete old image
+        //     if (Storage::exists($banners->img_500)) unlink($banners->img_500);
 
-            $image = $newDetails['img_500'];
-            $imageName = time().".".$image->getClientOriginalName();
-            $image->move($upload_path, $imageName);
-            $uploadedImage = $imageName;
-            $banners->img_500 = $upload_path.$uploadedImage;
-        }
+        //     $image = $newDetails['img_500'];
+        //     $imageName = time().".".$image->getClientOriginalName();
+        //     $image->move($upload_path, $imageName);
+        //     $uploadedImage = $imageName;
+        //     $banners->img_500 = $upload_path.$uploadedImage;
+        // }
         if (isset($newDetails['img_1000'])) {
             // delete old image
             if (Storage::exists($banners->img_1000)) unlink($banners->img_1000);

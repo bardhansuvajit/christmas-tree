@@ -194,3 +194,27 @@ border-top-right-radius: 0;
     margin-bottom: 10px;
 }
 /* notice ends */
+
+/* btn color */
+
+.admin .btn-primary{
+    background: #99a5ff !important;
+    color: #000 !important;
+}
+.admin-table .bg-success{
+    background: #7acd9fdd !important;
+    color: #000 !important;
+}
+.admin-table .bg-danger{
+    background-color: #ffc6c6 !important;
+    color: #000 !important;
+}
+.admin-table .bg-primary{
+    background-color: #99a5ff !important;
+    color: #000 !important;
+}
+@media (min-width: 1200px){
+   .container{
+    max-width: 1118px;
+   }
+}
